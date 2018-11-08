@@ -9,6 +9,8 @@ import { configureStore } from "../store";
 
 import * as TodoActions from "../actions";
 
+import { Routes } from "../Routes";
+
 const store = configureStore();
 
 store.dispatch(TodoActions.GetTodos());
@@ -16,7 +18,7 @@ store.dispatch(TodoActions.GetTodos());
 const App = props => {
   return (
     <Provider store={store}>
-      <div>Mehhhh</div>
+      <Routes />
     </Provider>
   );
 };

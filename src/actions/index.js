@@ -1,5 +1,6 @@
 import { TodoApi } from "../api";
 
+export const COMPLETE_TODO = "COMPLETE_TODO";
 //Create
 export const CREATE_TODO = "[Todo] CREATE_TODO";
 export const CREATE_TODO_SUCCESS = "[Todo] CREATE_TODO_SUCCESS";
