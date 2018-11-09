@@ -60,23 +60,21 @@ tr {
 
 table {
   table-layout: fixed;
-  width: 100%
+  width: 100%;
 }
 
 td {
-
   /* css-3 */
-  white-space: -o-pre-wrap; 
+  white-space: -o-pre-wrap;
   word-wrap: break-word;
-  white-space: pre-wrap; 
-  white-space: -moz-pre-wrap; 
-  white-space: -pre-wrap; 
-
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
 }
 
 td.options {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .bp3-running-text table th,

@@ -7,6 +7,7 @@ import "moment/locale/fr";
 
 import { DateInput } from "@blueprintjs/datetime";
 import "react-datepicker/dist/react-datepicker.css";
+import MomentLocaleUtils from "react-day-picker/moment";
 
 class Editor extends Component {
   constructor(props) {
@@ -105,10 +106,10 @@ class Editor extends Component {
             locale="fr"
             onChange={this.changeNewDate}
             showActionsBar={true}
+            localeUtils={MomentLocaleUtils}
             placeholder={moment()
               .locale("fr")
               .format("Do MMMM YYYY")}
-            // value={this.state.date !== undefined?this.getDateForDatePicker():undefined}
           />
         </td>
 
