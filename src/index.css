@@ -13,25 +13,25 @@ code {
     monospace;
 }
 
-.option-buttons{
-  flex: 1;
-}
-
-.updating{
+.updating {
   background: rgb(0, 172, 172);
 }
-.done{
+.done {
   background: rgb(69, 226, 69);
 }
-.deleting{
+.deleting {
   background: rgb(235, 122, 73);
 }
 
-tr{
+tr {
   transition: 800ms cubic-bezier(0, 0, 0, 1.43);
 }
 
-td.options{
+td.options {
   display: flex;
   flex-direction: row;
+}
+
+.bp3-running-text table th, table.bp3-html-table th, .bp3-running-text table td, table.bp3-html-table td {
+  vertical-align: middle;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Button, InputGroup } from "@blueprintjs/core";
+import { Button, InputGroup, ButtonGroup } from "@blueprintjs/core";
 
 import moment from "moment";
 
@@ -131,12 +131,14 @@ const Options = props => {
 const EditOptions = props => {
   return (
     <td>
-      <Button color="green" onClick={props.editTodo}>
-        Edit
-      </Button>
-      <Button color="blue" onClick={props.cancelEdit}>
-        Cancel
-      </Button>
+      <ButtonGroup large fill>
+        <Button icon="confirm" onClick={props.editTodo}>
+          Valider
+        </Button>
+        <Button icon="undo" onClick={props.cancelEdit}>
+          Annuler
+        </Button>
+      </ButtonGroup>
     </td>
   );
 };
@@ -144,12 +146,14 @@ const EditOptions = props => {
 const AddOptions = props => {
   return (
     <td>
-      <Button color="green" onClick={props.createTodo}>
-        Create
-      </Button>
-      <Button color="blue" onClick={props.resetTodo}>
-        Reset
-      </Button>
+      <ButtonGroup large fill>
+        <Button icon="confirm" onClick={props.createTodo}>
+          Valider
+        </Button>
+        <Button icon="undo" onClick={props.resetTodo}>
+          Annuler
+        </Button>
+      </ButtonGroup>
     </td>
   );
 };

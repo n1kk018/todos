@@ -4,7 +4,7 @@ import Editor from "./Editor";
 
 const Table = props => {
   return (
-    <table className="bp3-html-table bp3-condensed bp3-html-table-striped bp3-html-table-bordered bp3-interactive bp3-small">
+    <table className="bp3-html-table bp3-html-table-striped bp3-html-table-bordered bp3-interactive">
       <thead>
         <tr>
           <th>Title</th>
@@ -17,7 +17,7 @@ const Table = props => {
       <tbody>
         {props.todos.map(t => {
           if (t.editing) {
-             return (
+            return (
               <Editor
                 editTodo={props.editTodo}
                 cancelEditing={e => props.cancelEditing(t._id)}
