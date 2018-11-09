@@ -4,10 +4,23 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { PropTypes } from "prop-types";
 import Table from "../components/Table";
+import { Card, Elevation } from "@blueprintjs/core";
+import moment from "moment";
+import "moment/locale/fr";
 
 class Container extends Component {
+  formatDate = date => {
+    return moment(date)
+      .locale("fr")
+      .format();
+  };
   //Create
   createTodo = todo => {
+    if (todo.date) {
+      todo.date = this.formatDate(todo.date);
+    } else {
+      todo.date = new Date();
+    }
     this.props.actions.CreateTodo(todo);
   };
 
@@ -29,19 +42,21 @@ class Container extends Component {
   deleteTodo = todo => {
     this.props.actions.DeleteTodo(todo);
   };
-
   render() {
     return (
-      <div className="todo-container">
-        <Table
-          todos={this.props.todos}
-          createTodo={this.createTodo}
-          startEditing={this.startEditing}
-          cancelEditing={this.cancelEditing}
-          editTodo={this.editTodo}
-          completeTodo={this.completeTodo}
-          deleteTodo={this.deleteTodo}
-        />
+      <div className="container">
+        <Card interactive={true} elevation={Elevation.FOUR}>
+          <h1>Todo List</h1>
+          <Table
+            todos={this.props.todos}
+            createTodo={this.createTodo}
+            startEditing={this.startEditing}
+            cancelEditing={this.cancelEditing}
+            editTodo={this.editTodo}
+            completeTodo={this.completeTodo}
+            deleteTodo={this.deleteTodo}
+          />
+        </Card>
       </div>
     );
   }

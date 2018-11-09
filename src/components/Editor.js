@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Button, InputGroup, ButtonGroup } from "@blueprintjs/core";
 
 import moment from "moment";
+import "moment/locale/fr";
 
 import { DateInput } from "@blueprintjs/datetime";
 import "react-datepicker/dist/react-datepicker.css";
@@ -84,7 +85,7 @@ class Editor extends Component {
       <tr>
         <td>
           <InputGroup
-            placeholder="Title"
+            placeholder="Titre"
             value={this.state.title}
             onChange={this.changeNewTitle}
           />
@@ -100,9 +101,14 @@ class Editor extends Component {
 
         <td>
           <DateInput
-            {...this.getMomentFormatter("LL")}
+            {...this.getMomentFormatter("Do MMMM YYYY")}
             locale="fr"
             onChange={this.changeNewDate}
+            showActionsBar={true}
+            placeholder={moment()
+              .locale("fr")
+              .format("Do MMMM YYYY")}
+            // value={this.state.date !== undefined?this.getDateForDatePicker():undefined}
           />
         </td>
 
@@ -132,10 +138,10 @@ const EditOptions = props => {
   return (
     <td>
       <ButtonGroup large fill>
-        <Button icon="confirm" onClick={props.editTodo}>
+        <Button rightIcon="confirm" onClick={props.editTodo}>
           Valider
         </Button>
-        <Button icon="undo" onClick={props.cancelEdit}>
+        <Button rightIcon="undo" onClick={props.cancelEdit}>
           Annuler
         </Button>
       </ButtonGroup>
@@ -147,10 +153,10 @@ const AddOptions = props => {
   return (
     <td>
       <ButtonGroup large fill>
-        <Button icon="confirm" onClick={props.createTodo}>
+        <Button rightIcon="confirm" onClick={props.createTodo}>
           Valider
         </Button>
-        <Button icon="undo" onClick={props.resetTodo}>
+        <Button rightIcon="undo" onClick={props.resetTodo}>
           Annuler
         </Button>
       </ButtonGroup>

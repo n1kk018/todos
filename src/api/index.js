@@ -1,39 +1,37 @@
-import {HttpClient} from './httpClient' 
+import { HttpClient } from "./httpClient";
 
 // This is the API. The backend root URL can be set from here.
 
-const API = 'http://localhost:3000/api'
+const API = "http://localhost:3000/api";
 
 //Setting the todos URI
 
-const TODO_API = `${API}/todos`
+const TODO_API = `${API}/todos`;
 
 // The CRUD Operations of the Todo Resource.
 
-
 //Create
-const createTodo = async (todo) => {
-    return HttpClient.post(TODO_API, todo)
-}
+const createTodo = todo => {
+  return HttpClient.post(TODO_API, todo);
+};
 
 //Read
 const getTodo = () => {
-    return HttpClient.get(TODO_API)
-}
+  return HttpClient.get(TODO_API);
+};
 
 //Update
-const updateTodo = (todo) => {
-    return HttpClient.put(TODO_API, todo)
-}
+const updateTodo = todo => {
+  return HttpClient.put(TODO_API, todo);
+};
 
 //Delete
-const removeTodo = (todo) => {
-    return HttpClient.delete(`${TODO_API}/${todo._id}`)
-}
-
+const removeTodo = todo => {
+  return HttpClient.delete(`${TODO_API}/${todo._id}`);
+};
 
 //Encapsulating in a JSON object
 
-const TodoApi = {createTodo, getTodo, updateTodo, removeTodo}
+const TodoApi = { createTodo, getTodo, updateTodo, removeTodo };
 
-export {TodoApi}
+export { TodoApi };

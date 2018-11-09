@@ -1,15 +1,16 @@
 import React from "react";
 import Row from "./Row";
 import Editor from "./Editor";
+import { HTMLTable } from "@blueprintjs/core";
 
 const Table = props => {
   return (
-    <table className="bp3-html-table bp3-html-table-striped bp3-html-table-bordered bp3-interactive">
+    <HTMLTable bordered={true} striped={true}>
       <thead>
         <tr>
-          <th>Title</th>
+          <th>Titre</th>
           <th>Description</th>
-          <th>Date</th>
+          <th>Date Prévisionnelle</th>
           <th>Options</th>
         </tr>
       </thead>
@@ -39,7 +40,7 @@ const Table = props => {
         })}
         <Editor createTodo={props.createTodo} />
       </tbody>
-    </table>
+    </HTMLTable>
   );
 };
 
