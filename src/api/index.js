@@ -1,14 +1,8 @@
 import { HttpClient } from "./httpClient";
 
-// This is the API. The backend root URL can be set from here.
-
 const API = "http://localhost:3000/api";
 
-//Setting the todos URI
-
 const TODO_API = `${API}/todos`;
-
-// The CRUD Operations of the Todo Resource.
 
 //Create
 const createTodo = todo => {
@@ -29,8 +23,6 @@ const updateTodo = todo => {
 const removeTodo = todo => {
   return HttpClient.delete(`${TODO_API}/${todo._id}`);
 };
-
-//Encapsulating in a JSON object
 
 const TodoApi = { createTodo, getTodo, updateTodo, removeTodo };
 
