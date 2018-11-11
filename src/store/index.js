@@ -6,10 +6,9 @@ import reducer from "./reducer";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export function configureStore(preloadedState) {
+export function configureStore() {
   return createStore(
     reducer,
-    preloadedState,
     composeEnhancers(applyMiddleware(thunkMiddleware))
   );
 }

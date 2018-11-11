@@ -68,14 +68,12 @@ Container.propTypes = {
   todos: PropTypes.array.isRequired
 };
 
-// This maps the state to the property of the component
 function mapStateToProps(state, ownProps) {
   return {
     todos: state.todos
   };
 }
 
-// This maps the dispatch to the property of the component
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(actions, dispatch)
